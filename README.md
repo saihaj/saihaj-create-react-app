@@ -1,4 +1,5 @@
 # Development Setup
+This is a create-react-app template that has some add-ons I like to use with my projects. Comes with workflows that you can use to deploy a site on GH-Pages. 
 
 ## Prerquisites
 
@@ -15,9 +16,22 @@ npm start
 
 Now you should have development mode running on http://localhost:3000
 
-We have ESLint enabled on this project. You can install ESLint extension in VS Code [`dbaeumer.vscode-eslint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and enable it such that on save it takes care of all spacing and other good things (there is workspace (`.vscode`) with this repo so it should take care of that as it has settings all set for that, you just need to install ESLint). You can learn more about ESLint [here](https://eslint.org).
 
+## ESLint is enabled on this project
 
+## Github Actions Workflow
+In the `.github` folder there is `!workflows` folder. To enable those you will need to rename `!workflows` -> `workflows`. Following workflows are provided:
+* `continuous-integration`: 
+  * Uses ESLint to do linting tasks
+  * It will run on PR's and pushes on all branches.
+  * If your commit contains "skip lint" then it will not run the action
+* `deploy`: 
+  * It will run react build script and deploy the project to gh-pages
+  * It runs only on pushes to master branch. (This is setup assuming that you have dev and master branches and master is used as a production branch)
+  * NOTE: You will need to modify few things to make sure your deploy works:
+    * `committer_name: YOUR_GITHUB_NAME`
+    * `commiter_email: YOUR_GITHUB_EMAIL`
+  * You will need to add a [Github Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) in Secrets of your repo. Name it `deploy_access_token`
 
 ## Available Scripts
 
@@ -50,3 +64,5 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+To modify GH-Page deploy action check out and modify accordingly [`ghaction-github-pages`](https://github.com/crazy-max/ghaction-github-pages)
