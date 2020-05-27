@@ -1,7 +1,7 @@
 # Development Setup
 This is a create-react-app template that has some add-ons I like to use with my projects. Comes with workflows that you can use to deploy a site on GH-Pages. 
 
-## Prerquisites
+## Prerequisites
 
 * [Git](https://git-scm.com/)
 * [Node.JS](https://nodejs.org/en/) x64, version `>= 12.x` 
