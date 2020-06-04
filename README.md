@@ -66,3 +66,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 To modify GH-Page deploy action check out and modify accordingly [`ghaction-github-pages`](https://github.com/crazy-max/ghaction-github-pages)
+
+## Credits
+
+Eslint configurations and npm scripts are inspired from [@ShabadOS/desktop](https://github.com/ShabadOS/desktop)
