@@ -14,7 +14,8 @@ jobs:
         if: "!contains(github.event.head_commit.message, 'skip lint')"
 
         steps:
-            - uses: actions/checkout@v2
+            - name: Checkout
+              uses: actions/checkout@v2
 
             - name: Use Node.js 12.x
               uses: actions/setup-node@v1
@@ -22,15 +23,16 @@ jobs:
                 node-version: 12.x
             
             - name: Cache Node.js modules
-              uses: actions/cache@v1
+              uses: actions/cache@v2
               with:
-                  path: ~/.npm
-                  key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.OS }}-node-
-                      ${{ runner.OS }}-
+                id: cache
+                path: ./node_modules
+                key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
+                  ${{ runner.OS }}-node-
         
             - name: Install dependencies
+              if: steps.cache.outputs.cache-hit != 'true'
               run: npm i
             
             - name: Run Linter
