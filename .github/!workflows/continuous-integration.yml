@@ -26,14 +26,13 @@ jobs:
               uses: actions/cache@v2
               with:
                 id: cache
-                path: ./node_modules
+                path: ~/.npm
                 key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
                 restore-keys: |
                   ${{ runner.OS }}-node-
         
             - name: Install dependencies
-              if: steps.cache.outputs.cache-hit != 'true'
-              run: npm i
+              run: npm ci
             
             - name: Run Linter
               run: npm run lint
