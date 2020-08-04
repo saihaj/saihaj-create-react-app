@@ -20,12 +20,12 @@ Now you should have development mode running on http://localhost:3000
 ## ESLint is enabled on this project
 
 ## Github Actions Workflow
-In the `.github` folder there is `!workflows` folder. To enable those you will need to rename `!workflows` -> `workflows`. Following workflows are provided:
 * `continuous-integration`: 
   * Uses ESLint to do linting tasks
   * It will run on PR's and pushes on all branches.
   * If your commit contains "skip lint" then it will not run the action
-* `deploy`: 
+* `deploy`:
+  * To enable this you will need to move it into `workflows` from `disabled-workflows`.
   * It will run react build script and deploy the project to gh-pages
   * It runs only on pushes to master branch. (This is setup assuming that you have dev and master branches and master is used as a production branch)
   * NOTE: You will need to modify few things to make sure your deploy works:
