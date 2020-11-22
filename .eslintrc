@@ -7,16 +7,13 @@
   },
   "extends": "airbnb",
   "parser": "babel-eslint",
-  "plugins": [
-    "jsdoc",
-    "jest"
-  ],
+  "plugins": ["jsdoc", "jest"],
   "rules": {
-    "array-bracket-spacing": ["error","always"],
-    "computed-property-spacing": ["error","always"],
-    "func-names": ["error","never"],
-    "semi": ["error","never"],
-    "semi-style": ["error","first"],
+    "array-bracket-spacing": ["error", "always"],
+    "computed-property-spacing": ["error", "always"],
+    "func-names": ["error", "never"],
+    "semi": ["error", "never"],
+    "semi-style": ["error", "first"],
     "import/extensions": 0,
     "import/no-unresolved": 0,
     "import/prefer-default-export": 0,
@@ -46,9 +43,7 @@
       "error",
       "always",
       {
-        "exceptions": [
-          "empty"
-        ]
+        "exceptions": ["empty"]
       }
     ],
     "object-curly-newline": [
@@ -64,12 +59,13 @@
         "requireForBlockBody": false
       }
     ],
-     "import/no-extraneous-dependencies": [
-      "error", {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
         "devDependencies": true
-        }
-      ],
-      "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off"
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }
